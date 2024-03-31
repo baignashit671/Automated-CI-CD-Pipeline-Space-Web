@@ -23,7 +23,7 @@ jobs:
         run: docker pull azfaralam440/space-web:latest
         
       - name: run docker contaier
-        run: docker run -d -p 2222:80 --name spacelife azfaralam440/space-web:latest
+        run: docker-compose down && docker-compose up -d
         
     
     
