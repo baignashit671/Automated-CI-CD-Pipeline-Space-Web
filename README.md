@@ -2,7 +2,7 @@
 
 ![Cover Image](https://i.ibb.co/vsGDF2W/automation.png)
 
-# Description 
+# Description:
 
 Welcome to Automated-CI-CD-Pipeline-Space-Web! SpaceWeb is a demonstration project that showcases the simplicity and efficiency of automating the deployment process for a static website using Docker Compose and Jenkins CI/CD pipeline. This means that when a developer makes any changes to the code through GitHub, all the code will automatically deploy to the container without us having to click on anything. We are making the process easier and automatic using GitHub Webhook.
 
