@@ -39,7 +39,7 @@ Welcome to Automated-CI-CD-Pipeline-Space-Web! SpaceWeb is a demonstration proje
          - Review and launch the instance.
          - Connect to EC2 Instance: Once the instance is launched, connect to it using SSH or any other preferred method.
 
-## Step-1
+## Step-1:
 
   - Creatae file for easily installation of Jenkins
 
