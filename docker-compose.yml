@@ -1,12 +1,7 @@
 version: '3.8'
 
 services:
-  web1:
+  web:
     image: baignashit671/space-web:latest
     ports:
       - "2222:80"
-
-  web2:
-    image: baignashit671/space-web:latest
-    ports:
-      - "3333:80"
