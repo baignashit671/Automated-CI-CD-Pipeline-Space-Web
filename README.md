@@ -22,7 +22,7 @@ Welcome to Automated-CI-CD-Pipeline-Space-Web! SpaceWeb is a demonstration proje
 3. **Automatic Deployment**: Push changes to your GitHub repository, and Jenkins pipeline automatically deploys the updated website.
 4. **Seamless Updates**: Enjoy hassle-free updates to your static website without manual intervention, thanks to GitHub Webhook integration.
 
- ## Getting Started -
+ ## Getting Started: -
 
   ## Prerequisites
 
