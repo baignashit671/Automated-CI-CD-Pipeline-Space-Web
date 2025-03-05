@@ -24,7 +24,7 @@ Welcome to Automated-CI-CD-Pipeline-Space-Web! SpaceWeb is a demonstration proje
 
  ## Getting Started: -
 
-  ## Prerequisites
+  ## Prerequisites:
 
   1. **AWS Account:** You need an AWS account to utilize services like Amazon EKS and EC2. If you don't have an AWS account, you can [create one here](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_ap-southeast-2_aacbff57e379dd11&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=gz0r28YwtQey_P0ZDDgYsMbdjUHsI0LNhXn3s58m1nU&code_challenge_method=SHA-256).
  
