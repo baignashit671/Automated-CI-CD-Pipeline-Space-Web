@@ -1,4 +1,4 @@
-# Automated CI/CD Pipeline with Docker and Jenkins- SpaceWeb
+# Automated CI/CD Pipeline with Docker and Jenkins- SpaceWeb Application
 
 ![Cover Image](https://i.ibb.co/vsGDF2W/automation.png)
 
