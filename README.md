@@ -8,7 +8,7 @@ Welcome to Automated-CI-CD-Pipeline-Space-Web! SpaceWeb is a demonstration proje
 
   - ***Before I start, let me tell you that I have posted all the steps of this project creation on [my blog](https://medium.com/@azfaralam/automated-ci-cd-pipeline-with-docker-and-jenkins-space-web-8b6186e21d31), you can go and [see it once](https://medium.com/@azfaralam/automated-ci-cd-pipeline-with-docker-and-jenkins-space-web-8b6186e21d31).***
 
-## Features:
+## Features:-
 
 - **Effortless Deployment**: Deploy your static website effortlessly using Docker Compose.
 - **Continuous Integration**: Integrate seamlessly with GitHub using Jenkins CI/CD pipeline.
