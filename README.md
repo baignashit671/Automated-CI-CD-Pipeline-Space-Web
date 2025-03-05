@@ -15,7 +15,7 @@ Welcome to Automated-CI-CD-Pipeline-Space-Web! SpaceWeb is a demonstration proje
 - **Automated Updates**: Changes pushed to your GitHub repository trigger automatic updates to the deployed website.
 - **GitHub Webhook Integration**: Simplify and automate the deployment process with GitHub Webhook integration.
 
-  ## How it works-
+  ## How it works:-
 
 1. **Setup Docker Compose:** Begin by configuring Docker Compose to define your static website's services.
 2. **Integrate with Jenkins**: Connect SpaceWeb with your GitHub repository using Jenkins CI/CD pipeline.
