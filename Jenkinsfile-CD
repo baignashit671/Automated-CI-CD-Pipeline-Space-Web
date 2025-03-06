@@ -1,0 +1,22 @@
+pipeline {
+    agent any 
+
+    environment {
+        KUBE_CONFIG_ID = "eks-kubeconfig"  // Jenkins credential ID for kubeconfig
+        DEPLOYMENT_FILE = "deployment.yml"
+        SERVICE_FILE = "service.yml"
+    }
+
+    stages {
+        stage("Deploy to EKS") {
+            steps {
+                echo "Deploying to Amazon EKS"
+                withCredentials([kubeconfigFile(credentialsId: KUBE_CONFIG_ID, variable: 'KUBECONFIG')]) {
+                    sh "kubectl apply -f ${DEPLOYMENT_FILE}"
+                    sh "kubectl apply -f ${SERVICE_FILE}"
+                    sh "kubectl rollout status deployment/space-web"
+                }
+            }
+        }
+    }
+}
