@@ -1,20 +1,51 @@
 pipeline {
-    agent any 
+    agent any
 
     environment {
-        KUBE_CONFIG_ID = "eks-kubeconfig"  // Jenkins credential ID for kubeconfig
-        DEPLOYMENT_FILE = "deployment.yml"
-        SERVICE_FILE = "service.yml"
+        EKS_CLUSTER_NAME = "demo-ekscluster"
+        AWS_REGION = "us-east-1"
+        DOCKER_IMAGE = "baignashit671/space-web:latest"
     }
 
     stages {
+        stage("Clone code") {
+            steps {
+                echo "Cloning the code"
+                git url: "https://github.com/baignashit671/Automated-CI-CD-Pipeline-Space-Web.git", branch: "main"
+            }
+        }
+
+        stage("Build Docker Image") {
+            steps {
+                echo "Building the Docker image"
+                sh "docker build -t $DOCKER_IMAGE ."
+            }
+        }
+
+        stage("Push to DockerHub") {
+            steps {
+                echo "Pushing the image to DockerHub"
+                withCredentials([usernamePassword(credentialsId: "dockerHub", passwordVariable: "dockerHubPass", usernameVariable: "dockerHubUser")]) {
+                    sh """
+                        echo "$dockerHubPass" | docker login -u "$dockerHubUser" --password-stdin
+                        docker push $DOCKER_IMAGE
+                    """
+                }
+            }
+        }
+
         stage("Deploy to EKS") {
             steps {
-                echo "Deploying to Amazon EKS"
-                withCredentials([kubeconfigFile(credentialsId: KUBE_CONFIG_ID, variable: 'KUBECONFIG')]) {
-                    sh "kubectl apply -f ${DEPLOYMENT_FILE}"
-                    sh "kubectl apply -f ${SERVICE_FILE}"
-                    sh "kubectl rollout status deployment/space-web"
+                echo "Deploying the application to AWS EKS"
+                withCredentials([
+                    string(credentialsId: 'aws-access-key', variable: 'AWS_ACCESS_KEY_ID'),
+                    string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')
+                ]) {
+                    sh """
+                        aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+                        kubectl get ns
+                        kubectl apply -f k8s/space-web-deployment.yaml
+                    """
                 }
             }
         }
