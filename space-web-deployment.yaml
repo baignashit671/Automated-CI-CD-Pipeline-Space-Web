@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: space-web
-        image: "baignashit671/space-web:latest"
+        image: "baignashit671/space-web:__IMAGE_TAG__"
         ports:
           - containerPort: 80
         resources:
