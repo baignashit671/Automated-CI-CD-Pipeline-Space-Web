@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: space-web
+  namespace: default
+  labels:
+    app: space-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: space-web
+  template:
+    metadata:
+      labels:
+        app: space-web
+    spec:
+      containers:
+      - name: space-web
+        image: "baignashit671/space-web:latest"
+        ports:
+          - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: space-web
+  namespace: default
+spec:
+  selector:
+    app: space-web
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
